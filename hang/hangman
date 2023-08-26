@@ -1,0 +1,121 @@
+import random
+import string
+
+stages = ["""
+        ------
+        |    |
+        |
+        |
+        |
+        |
+        |
+    ------------
+    """, """
+        ------
+        |    |
+        |    O
+        |
+        |
+        |
+        |
+    ------------
+    """, """
+        ------
+        |    |
+        |    O
+        |    |
+        |    |
+        |
+        |
+    ------------
+    """, """
+        ------
+        |    |
+        |    O
+        |    |
+        |    |
+        |   /
+        |
+    ------------
+    """, """
+        ------
+        |    |
+        |    O
+        |    |
+        |    |
+        |   / \\
+        |
+    ------------
+    """, """
+        ------
+        |    |
+        |    O
+        |  --|
+        |    |
+        |   / \\
+        |
+    ------------
+    """, """
+        ------
+        |    |
+        |    O
+        |  --|--
+        |    |
+        |   / \\
+        |
+    ------------
+    """]
+
+def read_file(file_name):
+    with open(file_name) as f:
+        lines = f.read().splitlines()
+    return lines
+
+
+def get_right_word(words):  
+    return random.choice(words).upper()
+
+
+list_of_words = read_file("words")
+
+word = get_right_word(list_of_words)
+word_letters = set(word)
+
+word_floors = ''
+i = 0
+while i < len(word):
+    word_floors += '_'
+    i+=1
+
+alphabet = set(string.ascii_uppercase)
+used_letters = set()
+
+wrongs = 0
+while '_' in word_floors:
+    letter = input("Choose letter:\n").upper()
+    if letter in alphabet - used_letters and wrongs < len(stages):
+        used_letters.add(letter)
+        if letter in word:
+            print("====== Great choise ======\nNow, thats Your situation:")
+            w = word
+            while letter in w:
+                x = w.index(letter)
+                y = list(w)
+                y[x] = '_'
+                w = "".join(y)
+                y2 = list(word_floors)
+                y2[x] = letter
+                word_floors = "".join(y2)
+            print(word_floors)
+        elif letter not in word:
+            print("====== Wrong choice ======\n")
+            print(stages[wrongs])
+            wrongs+=1
+    elif wrongs >= len(stages):
+        print("=.=.=.=.=.=.=.=.=.=YOU LOST=.=.=.=.=.=.=.=.=.=")
+        break
+    elif letter in used_letters:
+        print("====== Letter already used ======")
+        
+print("=.=*=.=*=.=*=.=*=.=*** YOU WON***=.=*=.=*=.=*=.=*=.=")
+#hangman(list_of_words)
