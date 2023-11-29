@@ -1,0 +1,6 @@
+This was one of my first projects
+It  was supposed to help me menage all my tires to get rich (thats funny) i was supposed to put my decisions on futball into .xlsx, 
+so maybe if i look at all this i may be able to see where my mistakes come from
+
+After some time i see its pretty useless, mostly because of current form, whole idea i cool and maybe if it had some interface, it could be helpfull
+but in this formits not working, at least i toke a chance to try, even used it once or twice but it didn't work out
