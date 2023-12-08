@@ -1,0 +1,19 @@
+Cel:
+
+Implementacja gry w wisielca w języku Python. Gracz zgaduje litery, aby odgadnąć ukryte słowo. Jeśli gracz zgadnie poprawną literę, litera jest ujawniana w słowie.
+Jeśli gracz zgadnie nieprawidłową literę, rysowana jest część wisielca. Gra kończy się, gdy gracz odgadnie ukryte słowo lub gdy wisielec zostanie ukończony.
+
+Funkcje:
+
+    def hangman(word): Implementuje grę w wisielca. Przyjmuje ukryte słowo jako wejście.
+    wrong: Zmienna przechowująca liczbę błędnych odpowiedzi.
+    stages: Lista zawierająca etapy rysowania wisielca.
+    rletters: Lista przechowująca pozostałe litery w ukrytym słowie.
+    board: Lista reprezentująca bieżący stan słowa, z podkreśleniami dla nieodgadniętych liter.
+    win: Zmienna wskazująca, czy gracz wygrał grę.
+
+Wyjaśnienie:
+
+Główna funkcja, hangman(), przyjmuje ukryte słowo jako wejście. Następnie rozpoczyna się pętla, która trwa do momentu, gdy gracz wygra lub przegra grę.
+W każdej iteracji pętli gracz jest proszony o odgadnięcie litery. Jeśli gracz zgadnie poprawną literę, litera jest ujawniana w słowie. Jeśli gracz zgadnie nieprawidłową literę, rysowana jest część wisielca.
+Jeśli wszystkie litery w słowie zostaną odgadnięte, gracz wygra grę. Jeśli rysunek wisielca zostanie ukończony, gracz przegra grę.
