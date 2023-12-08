@@ -1,0 +1,28 @@
+Purpose:
+
+This Python code creates a simple phone book application using the Tkinter library. It allows users to add, edit, delete, and view contacts in the phone book.
+
+Functions:
+
+    phone_validator(phone): This function validates whether the provided phone number is in a valid format. It uses the phonenumbers library to parse the phone number and returns True if it is valid, or False otherwise.
+    Selected(): This function returns the index of the selected contact in the listbox. If no contact is selected, it displays an error message.
+    AddContact(): This function adds a new contact to the list of contacts. It takes the name and phone number of the new contact as input and appends them to the list. It also updates the listbox to display the new contact.
+    UpdateDetail(): This function updates the information of an existing contact. It takes the index of the selected contact and the new name and phone number as input. It updates the corresponding entry in the list of contacts and updates the listbox accordingly.
+    EntryReset(): This function clears the entries for the name and phone number.
+    Delete_Entry(): This function deletes the selected contact. It displays a confirmation message and removes the corresponding entry from the list of contacts. It also updates the listbox to reflect the deletion.
+    VIEW(): This function loads the information of the selected contact into the entries for the name and phone number.
+    Select_set(): This function sorts the list of contacts and updates the listbox to display the sorted list.
+    EXIT(): This function exits the application.
+
+Variables:
+
+    root: The main window of the application.
+    contactlist: A list that stores the contacts in the phone book.
+    Name: A StringVar object that holds the value of the name of the selected contact.
+    Number: A StringVar object that holds the value of the phone number of the selected contact.
+
+Additional Notes:
+
+    The application uses a combination of Tkinter widgets, such as Label, Entry, Button, and Listbox, to create a user-friendly interface.
+    The application validates the phone number input using the phonenumbers library to ensure that it is in a valid format.
+    The application displays error messages when necessary to guide the user.
